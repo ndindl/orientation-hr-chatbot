@@ -1,0 +1,55 @@
+{
+  "permissions": {
+    "defaultMode": "acceptEdits",
+    "allow": [
+      "Bash(mkdir:*)",
+      "Bash(ls:*)",
+      "Bash(pwd)",
+      "Bash(cat:*)",
+      "Bash(find:*)",
+      "Bash(grep:*)",
+      "Bash(tree:*)",
+      "Bash(echo:*)",
+      "Bash(touch:*)",
+
+      "Bash(python:*)",
+      "Bash(python3:*)",
+      "Bash(pip:*)",
+      "Bash(pip3:*)",
+      "Bash(pytest:*)",
+      "Bash(uv:*)",
+      "Bash(.venv/bin/python:*)",
+      "Bash(.venv/bin/pip:*)",
+      "Bash(.venv/bin/pytest:*)",
+
+      "Bash(npm:*)",
+      "Bash(npx:*)",
+      "Bash(node:*)",
+      "Bash(yarn:*)",
+      "Bash(pnpm:*)",
+
+      "Bash(docker:*)",
+      "Bash(docker compose:*)",
+      "Bash(docker-compose:*)",
+
+      "Bash(curl:*)",
+      "Bash(http:*)",
+
+      "Bash(git status)",
+      "Bash(git diff:*)",
+      "Bash(git log:*)",
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(git branch:*)",
+      "Bash(git checkout:*)"
+    ],
+    "deny": [
+      "Bash(rm -rf:*)",
+      "Bash(rm -fr:*)",
+      "Bash(sudo:*)",
+      "Bash(git push:*)",
+      "Bash(git reset --hard:*)",
+      "Bash(git clean:*)"
+    ]
+  }
+}
