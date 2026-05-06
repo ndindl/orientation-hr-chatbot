@@ -27,7 +27,7 @@ ABC Widgets HR will provide PDF documents — handbooks, benefits guides, leave-
 
 ## Technical Constraints
 
-- **Retrieval-augmented generation backed by a vector database.** Documents are chunked, embedded, and stored at ingest time; queries are embedded and matched against the store at runtime. *Why: grounding plus auditable citations.*
+- **Retrieval-augmented generation backed by Qdrant** as the vector database. Documents are chunked, embedded, and stored at ingest time; queries are embedded and matched against the store at runtime. *Why: grounding plus auditable citations. Qdrant is open-source, runs as a single Docker container, and has no managed-service dependency — appropriate for an internal HR tool.*
 - **Pluggable LLM provider.** The system must support both the **Claude API** (for production) and **Ollama** (for local development), switchable via an environment variable with no code changes. *Why: developers iterate locally without API costs; production runs on Claude.*
 - **Embedding and vector similarity run locally — no third-party embedding APIs.** The model must handle both English and Spanish. Choose accordingly and explain your choice. *Why: HR documents are sensitive and we don't want them flowing to external services at ingest time. Local embedding also keeps re-indexing free and offline-capable.*
 - **Frontend built with React.** *Why: the rest of ABC Widgets' internal tooling is React, and the team wants this app to fit that stack.*
