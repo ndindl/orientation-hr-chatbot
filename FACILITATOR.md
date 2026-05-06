@@ -14,6 +14,7 @@ Run through this 30 minutes before attendees arrive:
 - [ ] You have a working clone of the repo and have done a dry run of `Follow the instructions in @PROMPT.md.` end-to-end at least once on this machine. Mid-session is the worst time to discover a regression.
 - [ ] Docker Desktop is running on your demo machine.
 - [ ] The Claude Code extension is signed in and the model is set to a current Claude (Sonnet or Opus 4.x).
+- [ ] The `superpowers` plugin is installed in your Claude Code (`/plugin` command). Verify the workflow skills (brainstorming, writing-plans, executing-plans, TDD, debugging) are listed when Claude starts. Walk attendees through the install if they haven't done it.
 - [ ] You have a backup network plan (mobile hotspot) in case venue Wi-Fi goes sideways during model downloads.
 - [ ] Slack/Teams channel for the session is open so you can paste the API key there for attendees.
 

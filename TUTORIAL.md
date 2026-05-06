@@ -66,6 +66,7 @@ Have these installed and working **before** the session starts:
 | Requirement | Notes |
 |---|---|
 | **VS Code** | With the **Claude Code** extension installed and authenticated. |
+| **`superpowers` Claude Code plugin** | Install inside Claude Code via the `/plugin` command (from the official Anthropic plugin marketplace). Adds the workflow skills — brainstorming, planning, TDD, debugging, code review — that Claude leans on during the build. |
 | **Docker Desktop** | Running. Verify with `docker info`. |
 | **Python 3.11+** | For local development. `python3 --version`. |
 | **Node.js 18+** | For the React frontend tooling. `node --version`. |

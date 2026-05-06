@@ -23,7 +23,7 @@ That's all you start with. Claude builds the rest.
 
 If you're reading this five minutes before the workshop:
 
-1. **Install prereqs** — VS Code with the Claude Code extension, Docker Desktop running, Python 3.11+, Node 18+, Git. See [`TUTORIAL.md`](TUTORIAL.md) for full details.
+1. **Install prereqs** — VS Code with the Claude Code extension, the `superpowers` Claude Code plugin, Docker Desktop running, Python 3.11+, Node 18+, Git. See [`TUTORIAL.md`](TUTORIAL.md) for full details.
 2. **Pick an LLM endpoint** — either an Anthropic API key (we'll provide a temporary one for the session) or local Ollama with `ollama pull llama3.2`. API key is the recommended path.
 3. **Clone and open** —
    ```bash

@@ -56,7 +56,8 @@ Don't build these. If you believe one is critical, raise it as a clarifying ques
    4. Frontend chat UI with language selector and inline citations.
    5. End-to-end smoke test against the example PDF.
 4. **Write tests for non-trivial logic** — chunking, retrieval, prompt assembly, language handling.
-5. **Use well-maintained libraries**; don't reinvent the wheel.
-6. **When you make a non-obvious decision** — a model choice, a chunk size, a similarity threshold, a chunking strategy — briefly explain *why* in chat. Don't bury the rationale in code comments.
+5. **Never install Python packages on the base system.** If you need to install anything for development, use a project-local virtual environment (`.venv/`) and activate it before invoking `pip`. Keep all build artifacts inside the project directory so it's easy to throw away and start over. *Why: this runs on developers' machines; we don't want to pollute their global Python.*
+6. **Use well-maintained libraries**; don't reinvent the wheel.
+7. **When you make a non-obvious decision** — a model choice, a chunk size, a similarity threshold, a chunking strategy — briefly explain *why* in chat. Don't bury the rationale in code comments.
 
 Start by reading the example PDF in the documents folder, then ask your clarifying questions.
