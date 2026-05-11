@@ -28,7 +28,7 @@ ABC Widgets HR will provide PDF documents — handbooks, benefits guides, leave-
 ## Technical Constraints
 
 - **Retrieval-augmented generation backed by Qdrant** as the vector database. Documents are chunked, embedded, and stored at ingest time; queries are embedded and matched against the store at runtime. *Why: grounding plus auditable citations. Qdrant is open-source, runs as a single Docker container, and has no managed-service dependency — appropriate for an internal HR tool.*
-- **Pluggable LLM provider.** The system must support both the **Claude API** (for production) and **Ollama** (for local development), switchable via an environment variable with no code changes. *Why: developers iterate locally without API costs; production runs on Claude.*
+- **LLM provider: Claude API only.** Use the Anthropic Claude API for all LLM calls. An API key will be provided via environment variable (`ANTHROPIC_API_KEY`). No Ollama or other local-model support is needed.
 - **Embedding and vector similarity run locally — no third-party embedding APIs.** The model must handle both English and Spanish. Choose accordingly and explain your choice. *Why: HR documents are sensitive and we don't want them flowing to external services at ingest time. Local embedding also keeps re-indexing free and offline-capable.*
 - **Frontend built with React.** *Why: the rest of ABC Widgets' internal tooling is React, and the team wants this app to fit that stack.*
 - **Backend built in Python with FastAPI.** *Why: the RAG and ML libraries the team will rely on are Python-native, and FastAPI gives us a small, well-typed HTTP layer without ceremony.*
@@ -56,8 +56,9 @@ Don't build these. If you believe one is critical, raise it as a clarifying ques
    4. Frontend chat UI with language selector and inline citations.
    5. End-to-end smoke test against the example PDF.
 4. **Write tests for non-trivial logic** — chunking, retrieval, prompt assembly, language handling.
-5. **Never install Python packages on the base system.** If you need to install anything for development, use a project-local virtual environment (`.venv/`) and activate it before invoking `pip`. Keep all build artifacts inside the project directory so it's easy to throw away and start over. *Why: this runs on developers' machines; we don't want to pollute their global Python.*
-6. **Use well-maintained libraries**; don't reinvent the wheel.
-7. **When you make a non-obvious decision** — a model choice, a chunk size, a similarity threshold, a chunking strategy — briefly explain *why* in chat. Don't bury the rationale in code comments.
+5. **Do not touch git.** Do not create commits, stage files, run `git add`, create `.gitignore` entries, write log files, or perform any version-control operations. Focus entirely on writing and editing source files.
+6. **Never install Python packages on the base system.** If you need to install anything for development, use a project-local virtual environment (`.venv/`) and activate it before invoking `pip`. Keep all build artifacts inside the project directory so it's easy to throw away and start over. *Why: this runs on developers' machines; we don't want to pollute their global Python.*
+7. **Use well-maintained libraries**; don't reinvent the wheel.
+8. **When you make a non-obvious decision** — a model choice, a chunk size, a similarity threshold, a chunking strategy — briefly explain *why* in chat. Don't bury the rationale in code comments.
 
 Start by reading the example PDF in the documents folder, then ask your clarifying questions.
